@@ -11,7 +11,6 @@ from torch.utils.data import Dataset
 from transformers import AutoTokenizer
 from tqdm import tqdm
 import os
-from dotenv import load_dotenv
 from llama_wrapper import LlamaWrapper
 import argparse
 from typing import List
@@ -25,7 +24,6 @@ from behaviors import (
     ALL_BEHAVIORS
 )
 
-load_dotenv()
 
 HUGGINGFACE_TOKEN = os.getenv("HF_TOKEN")
 
@@ -143,6 +141,7 @@ def generate_save_vectors(
     model = LlamaWrapper(
         HUGGINGFACE_TOKEN, size=model_size, use_chat=not use_base_model
     )
+    print(behaviors)
     for behavior in behaviors:
         generate_save_vectors_for_behavior(
             layers, save_activations, behavior, model

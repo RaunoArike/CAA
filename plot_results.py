@@ -331,7 +331,7 @@ def plot_ab_data_per_layer(
             linestyle="dashed",
             markersize=10,
             linewidth=4,
-            label="Negative steering" if multiplier < 0 else "Positive steering",
+            label = "Negative steering" if multiplier < 0 else "No steering" if multiplier == 0 else "Positive steering",
         )
     # use % formatting for y axis
     plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f"{x:.0%}"))
@@ -531,7 +531,7 @@ if __name__ == "__main__":
         if steering_settings.type == "ab":
             if len(args.layers) > 1 and 1 in args.multipliers and -1 in args.multipliers:
                 plot_ab_data_per_layer(
-                    args.layers, [1, -1], steering_settings
+                    args.layers, [1, 0, -1], steering_settings
                 )
             if len(args.layers) == 1:
                 plot_ab_results_for_layer(args.layers[0], args.multipliers, steering_settings)

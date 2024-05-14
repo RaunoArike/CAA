@@ -13,7 +13,6 @@ from torch.utils.data import Dataset, DataLoader
 from torch.utils.data.distributed import DistributedSampler
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import os
-from dotenv import load_dotenv
 from utils.tokenize import tokenize_llama_chat
 from torch.distributed.optim import ZeroRedundancyOptimizer
 from torch.nn.parallel import DistributedDataParallel as DDP
@@ -25,7 +24,6 @@ from behaviors import ALL_BEHAVIORS, FINETUNE_PATH, get_ab_data_path, get_finetu
 os.environ['MASTER_ADDR'] = '127.0.0.1'
 os.environ['MASTER_PORT'] = '29500'
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ':4096:8'
-load_dotenv()
 
 HUGGINGFACE_TOKEN = os.getenv("HF_TOKEN")
 MODEL = "meta-llama/Llama-2-7b-chat-hf"

@@ -1,4 +1,4 @@
-for behavior in "hallucination" "myopic-reward" "sycophancy" "survival-instinct" "refusal" "corrigible-neutral-HHH" "coordinate-other-ais"
+for behavior in "hallucination" "myopic-reward" "sycophancy" "survival-instinct" "refusal" "corrigible-neutral-HHH" "coordinate-other-ais" "goal-directedness"
 do
     # python finetune_llama.py --behavior $behavior --direction pos 
     # python finetune_llama.py --behavior $behavior --direction neg

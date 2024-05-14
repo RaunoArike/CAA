@@ -6,11 +6,9 @@ sys.path.append(parent)
 from behaviors import get_results_dir, ALL_BEHAVIORS, COORDINATE, CORRIGIBLE, HALLUCINATION, MYOPIC_REWARD, SURVIVAL_INSTINCT, SYCOPHANCY, REFUSAL, RESULTS_PATH
 import glob
 import json
-from dotenv import load_dotenv
 from openai import OpenAI
 from tqdm import tqdm
 
-load_dotenv()
 
 client = OpenAI(
     api_key=os.environ.get("OPEN_AI_KEY"),

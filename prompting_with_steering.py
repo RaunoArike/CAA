@@ -8,7 +8,6 @@ python prompting_with_steering.py --behaviors sycophancy --layers 10 --multiplie
 import json
 from llama_wrapper import LlamaWrapper
 import os
-from dotenv import load_dotenv
 import argparse
 from typing import List, Dict, Optional
 from tqdm import tqdm
@@ -25,8 +24,6 @@ from behaviors import (
     ALL_BEHAVIORS,
     get_results_dir,
 )
-
-load_dotenv()
 
 HUGGINGFACE_TOKEN = os.getenv("HF_TOKEN")
 
